@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+
+
+{% block content%}
+
+<div class="container-fluid">
+    <h3 align="center">Products</h3>
+    <div class="container-fluid">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Calories</th>
+                  <th>Protein</th>
+                  <th>Fat</th>
+                  <th>Carbohydrates</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for product in products %}
+                    <tr>
+                        <td>{{product.PROD_NAME}}</td>
+                        <td>{{product.KCAL}}</td>
+                        <td>{{product.PROTEIN}}</td>
+                        <td>{{product.FAT}}</td>
+                        <td>{{product.CARB}}</td>
+                    </tr>
+                {% endfor %}
+              </tbody>
+  
+
+        </table>
+    </div>
+    <div class="container-fluid fixed-bottom">
+        <form method="POST">
+            <h3 align="center">Add a new product</h3>
+            <div class="input-group mb-3">
+            <span class="input-group-text" >Product</span>
+            <input type="text" class="form-control" placeholder="Product name" aria-label="Product" aria-describedby="basic-addon1" name="product" id="Product">
+            </div>
+            <div class="input-group mb-3">
+            <span class="input-group-text" > Calories </span>
+            <input type="text" class="form-control" placeholder="Calories" aria-label="Calories" aria-describedby="basic-addon1" name="calories" id="Calories">
+            </div>
+            <div class="input-group mb-3">
+            <span class="input-group-text" >Protein</span>
+            <input type="text" class="form-control" placeholder="Protein" aria-label="Protein" aria-describedby="basic-addon1" name="protein" id="Protein">
+            </div>
+            <div class="input-group mb-3">
+            <span class="input-group-text" >Fat</span>
+            <input type="text" class="form-control" placeholder="Fat" aria-label="Fat" aria-describedby="basic-addon1" name="fat" id="Fat">
+            </div>
+            <div class="input-group mb-3">
+            <span class="input-group-text" >Carbohydrates</span>
+            <input type="text" class="form-control" placeholder="Carbohydrates" aria-label="Carbohydrates" aria-describedby="basic-addon1" name="carbohydrates" id="Carbohydrates">
+            </div>
+            <div class="d-grid gap-2">
+            <button type="button submit" class="btn btn-primary">Add Product</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}
